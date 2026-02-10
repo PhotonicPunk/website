@@ -1,38 +1,21 @@
 ---
-title: "Welcome to My Blog"
-description: "An introduction to my new blog where I'll share thoughts on science, innovation, and entrepreneurship."
+title: "Hello World!"
+description: "An introduction to my new blog where I'll share thoughts on science, innovation, entrepreneurship, and more."
 pubDate: 2026-01-28
 tags: ["introduction", "personal"]
 ---
 
-# Welcome to My Blog
+If you know, you know.
 
-I'm excited to launch this blog as a space to share my thoughts, experiences, and insights gathered over 20+ years in applied research and development, entrepreneurship, and innovation.
+"Hello World" is traditionally the first program a beginner writes when learning a new programming language. For me, that rite of passage came in the 1970s, when as a young boy I was given an amazing toy: the Logix 0-600 Electronic Computer, made by Logix Enterprises in Montreal.
 
-## What to Expect
+![The Logix 0-600 Electronic Computer](/images/logix-0-600-box.jpg)
+*From the collections of The Henry Ford, Dearborn, Michigan.*
 
-Here, I'll be writing about:
+I'll save the details for a future post, but let's just say from this moment on I was hooked, and computers soon became an indispensable part of my life.
 
-- **Science** - From my work in infrared spectroscopy to holography, I'll share accessible explanations of complex topics
-- **Entrepreneurship** - Lessons learned from founding and building companies like Picomole and Valaista Health
-- **Innovation** - Insights on bringing technologies from the lab to market
-- **Leadership** - Thoughts on building and mentoring multidisciplinary teams
+This blog is my space to write about the ups and downs of my entrepreneurial journey. I've been an entrepreneur for over two decades, founding companies, building advanced research labs from scratch, leading applied R&D teams, and learning lessons the hard way. Some of those lessons were expensive. A few were painful. All had a role to play in shaping me into the entrepreneur I am today.
 
-## A Bit About Me
+Along the way, I expect to wander into science, innovation, leadership, travel, music, Dungeons & Dragons, and whatever else catches my fancy. I've never been particularly good at staying in one lane.
 
-I'm an experimental physicist with a PhD from the University of Toronto. Over the years, I've had the privilege of working on some fascinating technologies:
-
-- Non-invasive breath analysis for detecting lung cancer
-- Holographic displays for wearable technology
-- Metamaterial optical filters for aerospace applications
-- Atmospheric spectroscopy and climate research
-
-I've founded companies, led R&D teams, and worked with everyone from startups to the National Institute of Standards and Technology (NIST).
-
-## Why Now?
-
-After years of focusing on building things, I feel it's time to share some of what I've learned. Whether you're a scientist, entrepreneur, or just curious about how technology moves from idea to reality, I hope you'll find something valuable here.
-
-Stay tuned for more posts, and feel free to reach out if there are topics you'd like me to cover.
-
-*John*
+If any of that sounds interesting, pull up a chair. There's a lot to talk about.
