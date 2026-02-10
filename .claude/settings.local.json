@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips:*)",
+      "WebFetch(domain:barryoreilly.com)",
+      "Bash(ls:*)",
+      "WebSearch",
+      "Bash(grep:*)"
+    ]
+  }
+}

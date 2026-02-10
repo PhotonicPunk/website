@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Light rays emanating from bulb - 7 rays -->
+  <line x1="50" y1="0" x2="50" y2="12" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="26" y1="6" x2="32" y2="16" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="74" y1="6" x2="68" y2="16" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="8" y1="26" x2="18" y2="30" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="92" y1="26" x2="82" y2="30" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="4" y1="50" x2="16" y2="50" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="96" y1="50" x2="84" y2="50" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Light bulb outline -->
+  <path d="M50 18 Q26 18 26 48 Q26 65 38 74 L38 80 L62 80 L62 74 Q74 65 74 48 Q74 18 50 18 Z"
+        fill="none" stroke="#60a5fa" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- Bulb base threads -->
+  <line x1="38" y1="84" x2="62" y2="84" stroke="#60a5fa" stroke-width="4" stroke-linecap="round"/>
+  <line x1="40" y1="89" x2="60" y2="89" stroke="#60a5fa" stroke-width="4" stroke-linecap="round"/>
+  <line x1="44" y1="94" x2="56" y2="94" stroke="#60a5fa" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- JGC initials - clean, bold, centered in bulb -->
+  <text x="50" y="56"
+        font-family="Inter, system-ui, sans-serif"
+        font-size="22"
+        font-weight="700"
+        fill="#f5f5f5"
+        text-anchor="middle"
+        letter-spacing="-1">JGC</text>
+</svg>

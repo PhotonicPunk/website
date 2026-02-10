@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Media - John Cormier">
+  <!-- Media Section -->
+  <section class="media" id="media">
+    <h2>Media</h2>
+    <p class="section-intro">
+      Interviews, features, and press coverage.
+    </p>
+    <div class="media-grid">
+      <a href="https://www.youtube.com/watch?v=2KcTw35dfsI" target="_blank" rel="noopener" class="media-card">
+        <div class="media-thumbnail">
+          <img src="https://img.youtube.com/vi/2KcTw35dfsI/maxresdefault.jpg" alt="CityTV Feature" />
+        </div>
+        <span class="media-category">Video</span>
+        <h3>CityTV Feature</h3>
+        <p>Television interview about breath analysis technology and Picomole Instruments.</p>
+      </a>
+      <a href={`${base}Avenue-Magazine-2007.pdf`} target="_blank" class="media-card">
+        <div class="media-thumbnail avenue-thumb">
+          <img src={`${base}images/avenue-thumbnail.png`} alt="Avenue Magazine Profile" />
+        </div>
+        <span class="media-category">Print</span>
+        <h3>Avenue Magazine Profile</h3>
+        <p>Profile on the invention of LifeSens, a breath analysis device for early disease detection, and the journey to bring it to market.</p>
+      </a>
+      <a href={`${base}Globe-Mail-2012.pdf`} target="_blank" class="media-card">
+        <div class="media-thumbnail align-top">
+          <img src={`${base}images/globe-mail-2012-thumbnail.png`} alt="Globe & Mail Article" />
+        </div>
+        <span class="media-category">Print</span>
+        <h3>Globe & Mail</h3>
+        <p>2012 feature article.</p>
+      </a>
+      <a href={`${base}Edmonton-Journal-2007.pdf`} target="_blank" class="media-card">
+        <div class="media-thumbnail align-top">
+          <img src={`${base}images/edmonton-journal-2007-thumbnail.jpg`} alt="Edmonton Journal Article" />
+        </div>
+        <span class="media-category">Print</span>
+        <h3>Edmonton Journal</h3>
+        <p>2007 feature article.</p>
+      </a>
+      <a href={`${base}WST.pdf`} target="_blank" class="media-card">
+        <div class="media-thumbnail align-top">
+          <img src={`${base}images/wst-thumbnail.png`} alt="WST Magazine Article" />
+        </div>
+        <span class="media-category">Print</span>
+        <h3>WST Magazine</h3>
+        <p>Feature article.</p>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Media */
+  .media {
+    padding: 5rem 0;
+  }
+
+  .media h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .section-intro {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  .media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .media-card {
+    display: block;
+    background: var(--color-bg-alt);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .media-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .media-thumbnail {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: var(--color-bg);
+  }
+
+  .media-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .media-thumbnail.align-top img {
+    object-position: top;
+  }
+
+  .media-thumbnail.avenue-thumb img {
+    object-fit: contain;
+  }
+
+  .media-card:hover .media-thumbnail img {
+    transform: scale(1.05);
+  }
+
+  .media-card-content {
+    padding: 1.5rem;
+  }
+
+  .media-category {
+    display: block;
+    padding: 1.5rem 1.5rem 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .media-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0.75rem 0;
+    padding: 0 1.5rem;
+    color: var(--color-text);
+  }
+
+  .media-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .media-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

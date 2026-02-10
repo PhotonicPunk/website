@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Engage Me - John Cormier">
+  <!-- Working With Me Section -->
+  <section class="working-with-me">
+    <h2>Working With Me</h2>
+    <p class="section-intro">
+      I've been told by clients that my approach is refreshing. Maybe that's because at the start of an engagement, I find myself asking a lot of really basic questions (e.g., "What does that do?", "How do you know if it's working?", etc.)
+    </p>
+    <p class="section-intro">
+      I do this because I'm genuinely curious and love to learn new things. But mostly, it's because experience has taught me never to assume anything.
+    </p>
+    <p class="section-intro">
+      Because I don't assume anything, I don't offer "cookie-cutter" solutions. I also don't use trendy buzzwords or slide decks packed with "consultant speak" that look impressive but don't offer the entrepreneur much substance.
+    </p>
+    <p class="section-intro">
+      Instead, I do what comes naturally to a scientist: I use the scientific method to discover how things really are. I make, test, and refine hypotheses using available data. From there, I rely on creativity and experimentation to explore the problem space and find solutions that work.
+    </p>
+    <p class="section-intro">
+      But I'm more than just a scientist, I'm also an award-winning entrepreneur. I'm comfortable with risk and see it as an unavoidable part of doing great things. As an entrepreneur, I keenly understand that our businesses are not scientific experiments, they represent our livelihoods and our dreams.
+    </p>
+    <p class="section-intro">
+      By following this approach, I offer the kind of no-nonsense, practical advice that I would have greatly appreciated when I was starting out. Only someone who has walked their own entrepreneurial journey can do that.
+    </p>
+  </section>
+  <!-- Services I Offer Section -->
+  <section class="work-together" id="work-together">
+    <h2>Services I Offer</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Mentoring</h3>
+        <p>Being an entrepreneur is lonely, often thankless work. The endless grind can wear you down, and there's rarely anyone in your life who truly understands what you're going through. I've been living that life for more than twenty years, so believe me when I say I've probably had to deal with something very similar to what you're going through. Since 2007, I've mentored entrepreneurs not just on business strategy, but on staying focused, communicating effectively, respecting work-life balance, and sustaining the resilience you need to keep going when everything feels like resistance. Sometimes you just need someone in your corner who gets it.</p>
+      </div>
+      <div class="service-card">
+        <h3>Startup Advisor</h3>
+        <p>As a formal advisor, I work closely with founders on the critical challenges that make or break early-stage ventures: refining your business model, preparing for fundraising, crafting a compelling pitch, building your first team, protecting your intellectual property, and demonstrating proof-of-concept. I bring two decades of hands-on experience founding companies, maintaining corporate minute books, raising investments, writing business plans, preparing pro forma financial statements, and leading applied R&D teams. This is a structured engagement with clear deliverables tailored to your stage and goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="contact-cta">
+    <h2>Ready to Work Together?</h2>
+    <p class="section-intro">
+      Let's discuss how I can help you achieve your goals.
+    </p>
+    <a href={`${base}contact`} class="contact-btn">Get in touch</a>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Working With Me */
+  .working-with-me {
+    padding: 5rem 0;
+  }
+
+  .working-with-me h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  /* Services */
+  .work-together {
+    padding: 3rem 0 5rem 0;
+  }
+
+  .work-together h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .section-intro {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .service-card {
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    transition: box-shadow 0.2s;
+  }
+
+  .service-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .service-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    color: var(--color-text-muted);
+  }
+
+  /* Contact CTA */
+  .contact-cta {
+    text-align: center;
+    padding: 5rem 0;
+  }
+
+  .contact-cta h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .contact-cta .section-intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--color-accent);
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+
+  .contact-btn:hover {
+    background: var(--color-accent-hover);
+    color: white;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .principles-grid,
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

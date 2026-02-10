@@ -1,0 +1,302 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "John Gerald Cormier, PhD - Physicist, Inventor, Entrepreneur" } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="icon" href={`${base}favicon.ico`} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Mosaic Banner -->
+    <div class="mosaic-banner">
+      <div class="mosaic-item">
+        <img src={`${base}images/lab/IMG_2933.jpg`} alt="Lab" />
+      </div>
+      <div class="mosaic-item">
+        <img src={`${base}images/lab/IMG_2773.jpg`} alt="Lab" style="object-position: center calc(50% - 20px);" />
+      </div>
+      <div class="mosaic-item">
+        <img src={`${base}images/lab/5BD298AE-40A3-46FE-ACB7-C5D1E799E4C6_1_105_c.jpeg`} alt="Lab" />
+      </div>
+      <div class="mosaic-item">
+        <img src={`${base}images/lab/IMG_2833.jpg`} alt="Lab" />
+      </div>
+      <div class="mosaic-item">
+        <img src={`${base}images/lab/IMG_2872.jpg`} alt="Lab" />
+      </div>
+    </div>
+
+    <nav>
+      <div class="nav-container">
+        <a href={base} class="logo">
+          <img src={`${base}logo.svg`} alt="JGC" class="logo-img" />
+          <span>John Cormier</span>
+        </a>
+        <div class="nav-links">
+          <a href={`${base}#about`}>About</a>
+          <a href={`${base}engage`}>Engage Me</a>
+          <a href={`${base}media`}>Media</a>
+          <a href={`${base}blog`}>Blog</a>
+          <a href={`${base}contact`}>Get In Touch</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href={`${base}#about`}>About</a>
+          <a href={`${base}engage`}>Engage Me</a>
+          <a href={`${base}media`}>Media</a>
+          <a href={`${base}blog`}>Blog</a>
+          <a href={`${base}contact`}>Contact</a>
+        </div>
+        <p class="copyright">&copy; {new Date().getFullYear()} John Gerald Cormier. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --color-bg: #0f0f0f;
+    --color-bg-alt: #1a1a1a;
+    --color-text: #f5f5f5;
+    --color-text-muted: #a0a0a0;
+    --color-accent: #60a5fa;
+    --color-accent-hover: #93c5fd;
+    --color-border: #2a2a2a;
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --max-width: 1100px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  /* Navigation */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 100;
+  }
+
+  .nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+  }
+
+  .logo:hover {
+    color: var(--color-text);
+  }
+
+  .logo-img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .nav-links a {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+    text-transform: uppercase;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-text);
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    transition: 0.3s;
+  }
+
+  /* Mosaic Banner */
+  .mosaic-banner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 150px;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: var(--color-bg);
+    align-items: center;
+    justify-items: center;
+  }
+
+  .mosaic-item {
+    overflow: hidden;
+    border-radius: 6px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .mosaic-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .mosaic-item:hover img {
+    transform: scale(1.05);
+  }
+
+  .mosaic-item img.crop-bottom {
+    object-position: center bottom;
+  }
+
+  /* Main content */
+  main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--color-border);
+    margin-top: 6rem;
+    padding: 3rem 2rem;
+    background: var(--color-bg-alt);
+  }
+
+  .footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-links a {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-text);
+  }
+
+  .copyright {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .mosaic-banner {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 100px 100px;
+    }
+
+    .mosaic-banner .mosaic-item:last-child {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+    }
+
+    .footer-links {
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+    }
+  }
+</style>
