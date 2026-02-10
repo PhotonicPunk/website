@@ -1,6 +1,6 @@
 # John Gerald Cormier - Personal Website
 
-A personal website built with [Astro](https://astro.build), featuring a blog, professional experience, publications, and patents.
+A personal website built with [Astro](https://astro.build), including a blog.
 
 ## Local Development
 
