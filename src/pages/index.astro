@@ -1,5 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import photo5 from '../assets/images/photo5.jpg';
+import photo2 from '../assets/images/photo2.jpg';
+import photo1 from '../assets/images/photo1.jpg';
+import photo6 from '../assets/images/photo6.jpg';
+import photo4 from '../assets/images/photo4.jpg';
+import photo8 from '../assets/images/photo8.jpg';
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -18,22 +25,22 @@ const base = import.meta.env.BASE_URL;
   <section class="photo-gallery">
     <div class="gallery-grid">
       <div class="gallery-item portrait">
-        <img src={`${base}images/photo5.jpg`} alt="John Cormier" />
+        <Image src={photo5} alt="John Cormier on a beach in New Brunswick" width={500} format="webp" />
       </div>
       <div class="gallery-item portrait">
-        <img src={`${base}images/photo2.jpg`} alt="John Cormier" />
+        <Image src={photo2} alt="John Cormier presenting at the VenturePrize finals in May 2007" width={500} format="webp" />
       </div>
       <div class="gallery-item landscape zoomed">
-        <img src={`${base}images/photo1.jpg`} alt="John Cormier" />
+        <Image src={photo1} alt="Team reflections on the first large-area hologram ever made at MTI" width={600} format="webp" />
       </div>
       <div class="gallery-item landscape align-bottom">
-        <img src={`${base}images/photo6.jpg`} alt="John Cormier" />
+        <Image src={photo6} alt="Thalmic Labs team photo on Canada Day in Waterloo" width={600} format="webp" />
       </div>
       <div class="gallery-item portrait">
-        <img src={`${base}images/photo4.jpg`} alt="John Cormier" />
+        <Image src={photo4} alt="John Cormier representing the NBIF at the opening of the New Brunswick Center for Precision Medicine in Moncton" width={500} format="webp" />
       </div>
       <div class="gallery-item portrait">
-        <img src={`${base}images/photo8.jpg`} alt="John Cormier" />
+        <Image src={photo8} alt="John Cormier at UNB Saint John as an invited conference panelist" width={500} format="webp" />
       </div>
     </div>
   </section>
