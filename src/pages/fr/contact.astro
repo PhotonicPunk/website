@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Contact - John Cormier" description="Contactez John Cormier pour discuter de mentorat, de conseil aux startups ou d'opportunités de collaboration." lang="fr">
+  <!-- Contact Form Section -->
+  <section class="contact-form-section">
+    <h2>Contactez-moi</h2>
+    <p class="section-intro">
+      Intéressé à collaborer ou simplement envie de dire bonjour ? J'aimerais beaucoup avoir de vos nouvelles.
+    </p>
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">Prénom</label>
+          <input type="text" id="firstName" name="firstName" required />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Nom de famille</label>
+          <input type="text" id="lastName" name="lastName" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Adresse courriel</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Envoyer le message</button>
+      <p class="form-status" id="formStatus"></p>
+    </form>
+
+    <script>
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('.submit-btn');
+        btn.disabled = true;
+        btn.textContent = 'Envoi en cours...';
+        status.textContent = '';
+        status.className = 'form-status';
+
+        try {
+          const res = await fetch('https://formspree.io/f/xbdalejz', {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' },
+          });
+          if (res.ok) {
+            form.reset();
+            status.textContent = 'Message envoyé ! Merci de m\'avoir contacté.';
+            status.classList.add('success');
+          } else {
+            status.textContent = 'Un problème est survenu. Veuillez réessayer.';
+            status.classList.add('error');
+          }
+        } catch {
+          status.textContent = 'Un problème est survenu. Veuillez réessayer.';
+          status.classList.add('error');
+        }
+        btn.disabled = false;
+        btn.textContent = 'Envoyer le message';
+      });
+    </script>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-form-section {
+    padding: 5rem 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-form-section h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .section-intro {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    color: var(--color-text);
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  .submit-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: var(--font-sans);
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: flex-start;
+  }
+
+  .submit-btn:hover {
+    background: var(--color-accent-hover);
+  }
+
+  .form-status {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+
+  .form-status.success {
+    color: #16a34a;
+  }
+
+  .form-status.error {
+    color: #dc2626;
+  }
+
+  @media (max-width: 600px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Services - John Cormier" description="Travaillez avec John Cormier — mentorat, conseil aux startups et accompagnement pratique pour entrepreneurs et innovateurs ancré dans la science et l'expérience terrain." lang="fr">
+  <!-- Working With Me Section -->
+  <section class="working-with-me">
+    <h2>Travailler avec moi</h2>
+    <p class="section-intro">
+      Mes clients me disent souvent que mon approche est rafraîchissante. C'est peut-être parce qu'au début d'un mandat, je pose beaucoup de questions très simples (par ex., « Qu'est-ce que ça fait ? », « Comment savez-vous si ça marche ? », etc.)
+    </p>
+    <p class="section-intro">
+      Je le fais parce que je suis sincèrement curieux et j'adore apprendre de nouvelles choses. Mais surtout, c'est parce que l'expérience m'a appris à ne jamais rien prendre pour acquis.
+    </p>
+    <p class="section-intro">
+      Parce que je ne présume de rien, je n'offre pas de solutions « prêtes-à-porter ». Je n'utilise pas non plus de mots à la mode ni de présentations remplies de « jargon de consultant » qui impressionnent mais n'apportent pas grand-chose à l'entrepreneur.
+    </p>
+    <p class="section-intro">
+      Au lieu de cela, je fais ce qui vient naturellement à un scientifique : j'utilise la méthode scientifique pour découvrir comment les choses fonctionnent réellement. Je formule, teste et affine des hypothèses à partir des données disponibles. De là, je m'appuie sur la créativité et l'expérimentation pour explorer l'espace du problème et trouver des solutions qui fonctionnent.
+    </p>
+    <p class="section-intro">
+      Mais je suis plus qu'un simple scientifique, je suis aussi un entrepreneur primé. Je suis à l'aise avec le risque et le vois comme une partie inévitable de l'accomplissement de grandes choses. En tant qu'entrepreneur, je comprends profondément que nos entreprises ne sont pas des expériences scientifiques — elles représentent nos moyens de subsistance et nos rêves.
+    </p>
+    <p class="section-intro">
+      En suivant cette approche, j'offre le genre de conseils pratiques et sans détour que j'aurais grandement appréciés à mes débuts. Seul quelqu'un qui a fait son propre parcours entrepreneurial peut faire cela.
+    </p>
+  </section>
+  <!-- Services I Offer Section -->
+  <section class="work-together" id="work-together">
+    <h2>Services offerts</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Mentorat</h3>
+        <p>Être entrepreneur est un travail solitaire et souvent ingrat. Le rythme incessant peut vous user, et il y a rarement quelqu'un dans votre vie qui comprend vraiment ce que vous traversez. Je vis cette réalité depuis plus de vingt ans, alors croyez-moi quand je dis que j'ai probablement dû affronter quelque chose de très similaire à ce que vous vivez. Depuis 2007, j'accompagne des entrepreneurs non seulement sur la stratégie d'affaires, mais aussi sur la concentration, la communication efficace, l'équilibre travail-vie personnelle et la résilience nécessaire pour continuer quand tout semble être de la résistance. Parfois, vous avez simplement besoin de quelqu'un dans votre coin qui comprend.</p>
+      </div>
+      <div class="service-card">
+        <h3>Conseiller de startup</h3>
+        <p>En tant que conseiller formel, je travaille étroitement avec les fondateurs sur les défis critiques qui font ou défont les entreprises en démarrage : affiner votre modèle d'affaires, préparer une levée de fonds, concevoir une présentation convaincante, bâtir votre première équipe, protéger votre propriété intellectuelle et démontrer la preuve de concept. J'apporte deux décennies d'expérience pratique dans la fondation d'entreprises, la tenue de livres de procès-verbaux, la levée d'investissements, la rédaction de plans d'affaires, la préparation d'états financiers pro forma et la direction d'équipes de R&D appliquée. Il s'agit d'un mandat structuré avec des livrables clairs adaptés à votre stade et vos objectifs.</p>
+      </div>
+      <div class="service-card">
+        <h3>Consultant scientifique</h3>
+        <p></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="contact-cta">
+    <h2>Prêt à travailler ensemble ?</h2>
+    <p class="section-intro">
+      Discutons de la façon dont je peux vous aider à atteindre vos objectifs.
+    </p>
+    <a href={`${base}fr/contact`} class="contact-btn">Contactez-moi</a>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Working With Me */
+  .working-with-me {
+    padding: 5rem 0;
+  }
+
+  .working-with-me h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  /* Services */
+  .work-together {
+    padding: 3rem 0 5rem 0;
+  }
+
+  .work-together h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .section-intro {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .service-card {
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    transition: box-shadow 0.2s;
+  }
+
+  .service-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .service-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    color: var(--color-text-muted);
+  }
+
+  /* Contact CTA */
+  .contact-cta {
+    text-align: center;
+    padding: 5rem 0;
+  }
+
+  .contact-cta h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .contact-cta .section-intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--color-accent);
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+
+  .contact-btn:hover {
+    background: var(--color-accent-hover);
+    color: white;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .principles-grid,
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

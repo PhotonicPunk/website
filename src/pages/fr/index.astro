@@ -1,0 +1,425 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import photo5 from '../../assets/images/photo5.jpg';
+import photo2 from '../../assets/images/photo2.jpg';
+import photo1 from '../../assets/images/photo1.jpg';
+import photo6 from '../../assets/images/photo6.jpg';
+import photo4 from '../../assets/images/photo4.jpg';
+import photo8 from '../../assets/images/photo8.jpg';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="John Cormier - Entrepreneur, inventeur, leader" description="John Gerald Cormier, PhD - Physicien, inventeur et entrepreneur primé avec plus de deux décennies d'expérience en R&D appliquée, en démarrage d'entreprises et en innovation au Canada atlantique." lang="fr">
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <div class="hero-content">
+      <h1 class="hero-tagline">Entrepreneur · Inventeur · Leader</h1>
+      <p class="hero-intro">
+        J'aide les fondateurs de deeptech à lancer de nouvelles entreprises, à livrer des présentations gagnantes, à démontrer la preuve de concept, à protéger leurs droits de propriété intellectuelle et à bâtir des équipes performantes. Dans mes temps libres, j'aime jouer à D&D et mentorer de jeunes entrepreneurs dans ma communauté.
+      </p>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="photo-gallery">
+    <div class="gallery-grid">
+      <div class="gallery-item portrait">
+        <Image src={photo5} alt="John Cormier sur une plage du Nouveau-Brunswick" width={500} format="webp" />
+      </div>
+      <div class="gallery-item portrait">
+        <Image src={photo2} alt="John Cormier présentant à la finale de VenturePrize en mai 2007" width={500} format="webp" />
+      </div>
+      <div class="gallery-item landscape zoomed">
+        <Image src={photo1} alt="Reflets de l'équipe sur le premier hologramme grand format réalisé chez MTI" width={600} format="webp" />
+      </div>
+      <div class="gallery-item landscape align-bottom">
+        <Image src={photo6} alt="Photo d'équipe de Thalmic Labs le jour de la fête du Canada à Waterloo" width={600} format="webp" />
+      </div>
+      <div class="gallery-item portrait">
+        <Image src={photo4} alt="John Cormier représentant la FINB à l'ouverture du Centre de médecine de précision du Nouveau-Brunswick à Moncton" width={500} format="webp" />
+      </div>
+      <div class="gallery-item portrait">
+        <Image src={photo8} alt="John Cormier à l'UNB Saint John en tant que panéliste invité" width={500} format="webp" />
+      </div>
+    </div>
+  </section>
+
+  <!-- My Story Section -->
+  <section class="story" id="story">
+    <h2 style="text-align: center;">Mon parcours</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content-wrapper">
+          <span class="timeline-year">1986</span>
+          <div class="timeline-content">
+            <h3>Cold Lake</h3>
+            <p>À l'été 1986, j'ai suivi le Cours supérieur de leadership (CSL) des Cadets de l'Aviation royale du Canada à la BFC Cold Lake, en Alberta. Les participants du CSL venaient de partout au pays. Mon camarade de chambrée, qui a remporté le prix du meilleur cadet (et a eu droit à un vol en CF-18 en récompense !), venait de la Colombie-Britannique. Le cours éprouvant de six semaines nous occupait quotidiennement de 6 h à 22 h : exercices militaires, formation au leadership, techniques d'instruction, civisme et conditionnement physique. De retour à mon escadron d'attache (101 Moncton) à la fin de l'été, j'ai été promu adjudant (Adj 2) et j'ai servi comme instructeur et mentor pour environ 90 à 100 cadets de l'air. J'avais rejoint les cadets parce qu'un ami s'y inscrivait et parce que je voulais devenir pilote. Au final, mon ami a abandonné peu après, et moi j'ai gradué quatre ans plus tard en tant que leader, avec des compétences qui me servent encore aujourd'hui.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content-wrapper">
+          <span class="timeline-year">1989</span>
+          <div class="timeline-content">
+            <h3>Freddy Beach</h3>
+            <p>J'ai passé deux étés à travailler dans un petit groupe de recherche à l'UNB à Fredericton, alors que j'étais étudiant au baccalauréat. Le groupe développait la première simulation numérique du réacteur nucléaire CANDU. Comme cela impliquait la résolution d'équations différentielles couplées pour le transport de neutrons, le transfert de chaleur et la dynamique des fluides par méthodes numériques, le code Fortran était énorme comparé à la programmation BASIC que j'avais faite auparavant en tant que jeune amateur. J'ai passé un mois inoubliable le premier été à « casser » différents tuyaux de refroidissement du réacteur et à enregistrer méticuleusement ce qui arrivait aux variables clés comme la température du cœur. Je n'en revenais pas qu'on me payait pour faire ça ! Relever le défi de la programmation scientifique a porté ses fruits de façon inattendue, car cela m'a mené à des contrats pour d'autres groupes de recherche ayant besoin de simulations numériques.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content-wrapper">
+          <span class="timeline-year">1994</span>
+          <div class="timeline-content">
+            <h3>Vérité terrain</h3>
+            <p>L'un des scientifiques qui m'avait embauché pour programmer des simulations numériques était Jim Drummond, alors professeur de physique à l'Université de Toronto. Après avoir terminé un contrat pour Jim qui m'avait occupé à programmer et tester des simulations numériques du rayonnement atmosphérique en Fortran pendant un an et demi, j'ai changé de cap et me suis inscrit aux études supérieures sous sa direction. Jim était le chercheur principal d'une équipe internationale de scientifiques concevant un instrument satellite appelé MOPITT (Measurements of Pollution In The Troposphere). Pour ma thèse de maîtrise, j'ai conçu, construit et testé un simulateur solaire infrarouge à faible coût qui est devenu l'une des trois cibles radiométriques utilisées pour valider l'instrument MOPITT avant son lancement en 1999. MOPITT est devenu la plus longue mission spatiale en opération de l'histoire canadienne jusqu'à sa désactivation en 2025.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content-wrapper">
+          <span class="timeline-year">2002</span>
+          <div class="timeline-content">
+            <h3>Laser Focus</h3>
+            <p>Alors que MOPITT était livré à nos partenaires industriels pour intégration au vaisseau spatial de la NASA, j'ai une fois de plus changé de cap et proposé un projet de recherche basé sur le laser infrarouge pour effectuer des mesures contrôlées en laboratoire du continuum de la vapeur d'eau. Le continuum est un facteur significatif dans le climat terrestre, mais il était mal compris en raison des défis techniques redoutables pour effectuer des mesures précises de cette absorption faible et sans traits distinctifs. L'expérience de cavity ringdown dans l'infrarouge moyen que j'ai développée à l'Université de Toronto, puis améliorée au National Institute for Standards and Technology (NIST) comme chercheur postdoctoral, a mené aux premières mesures précises à basse température du continuum de la vapeur d'eau, des données qui ont offert un aperçu révélateur du rôle des dimères d'eau. Pendant que j'étais encore au NIST, j'ai aussi découvert que l'appareil que j'avais construit pouvait aussi facilement mesurer des concentrations de gaz traces dans l'air à l'échelle de parties par milliard (ppb).</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content-wrapper">
+          <span class="timeline-year">2005</span>
+          <div class="timeline-content">
+            <h3>Respirez</h3>
+            <p>Je suis rentré au Canada fin 2003 pour travailler chez Synodon, une entreprise basée à Edmonton, où une fois de plus j'étais employé à programmer des simulations numériques de transmission atmosphérique pour une nouvelle application : la détection de fuites de pipelines de pétrole et de gaz. L'entreprise se dirigeait vers un premier appel public à l'épargne, et l'esprit entrepreneurial était contagieux. Chez Synodon, j'ai appris comment la rareté des ressources pouvait libérer des solutions astucieuses et créatives dans les bonnes conditions. C'est dans le laboratoire de Synodon que j'ai eu l'épiphanie : en regardant un chariot à outils, je me suis rappelé mon expérience au NIST. Pouvais-je prendre tout cet équipement et le miniaturiser dans un petit chariot utilisable en milieu clinique pour l'analyse rapide et quantitative de l'haleine ? En avril 2005, avec le soutien enthousiaste d'Adrian Banica, fondateur et PDG de Synodon, j'ai quitté son entreprise et fondé Picomole Instruments pour le découvrir.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content-wrapper">
+          <span class="timeline-year">2007</span>
+          <div class="timeline-content">
+            <h3>VenturePrize</h3>
+            <p>J'ai ensuite levé des millions de dollars en investissements, recruté une équipe de scientifiques et d'ingénieurs, et développé des technologies capables de détecter le cancer du poumon à partir d'un simple échantillon d'haleine, mais vous ne l'auriez jamais deviné en voyant le premier bureau de Picomole, une suite modeste de 220 pi² au Centre de technologie avancée d'Edmonton. À cette époque, le mobilier de bureau de Picomole consistait en un bureau et une bibliothèque en bois que j'avais achetés usagés pour 140 $, et une plante de bambou à 4 $ achetée chez Ikea pour l'ambiance. Je n'avais aucun équipement de laboratoire. Tout ce que j'avais à ma disposition était mon portable et une grande pile d'articles de recherche sur l'analyse de l'haleine. Là, je me suis concentré sur l'idée qui m'obsédait depuis des années et j'ai franchi l'étape suivante : j'ai programmé une simulation Matlab d'une version nouvelle génération de mon ancienne expérience au NIST. Satisfait enfin que mon idée fonctionnerait, je me suis assis et j'ai bâti une entreprise à partir de zéro, en commençant par le plan d'affaires qui allait donner à l'entreprise son plus grand élan en mai 2007, lorsque nous avons remporté le concours de plans d'affaires VenturePrize.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content-wrapper">
+          <span class="timeline-year">2015</span>
+          <div class="timeline-content">
+            <h3>Renaissance</h3>
+            <p>En 2015, j'avais poussé Picomole (et Valaista Health, une entreprise dérivée que j'avais fondée pour poursuivre les applications non médicales de la technologie d'analyse de l'haleine) aussi loin que possible. D'une façon ou d'une autre, l'équipe talentueuse de scientifiques et d'ingénieurs que j'avais embauchée a résolu d'innombrables problèmes techniques pour construire un analyseur d'haleine sur un chariot qui ressemblait étrangement à la vision originale que j'avais couchée sur papier une décennie auparavant. Pour couronner le tout, nous avions obtenu des résultats exceptionnels lors de notre premier essai clinique, meilleurs que ce que quiconque avait osé espérer. Mais le chemin du développement de produits cliniques est très coûteux, et je ne voyais aucune voie viable vers les dizaines de millions de dollars qui seraient ultimement nécessaires. À ce stade de ma vie, j'étais épuisé et n'avais plus rien à donner. J'ai donc fermé Valaista et travaillé étroitement avec le conseil d'administration de Picomole pour trouver un nouveau PDG. Pour la première fois en huit ans, j'avais le temps de prendre soin de moi. J'ai enfourché mon vélo et suis parti rouler. J'ai lentement commencé à décompresser. Quelques mois plus tard, batteries rechargées, je suis devenu directeur de l'ingénierie chez Metamaterial Technologies Inc. (MTI), basée à Halifax.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content-wrapper">
+          <span class="timeline-year">2017</span>
+          <div class="timeline-content">
+            <h3>Construire à nouveau</h3>
+            <p>Chez MTI, j'ai pu construire à nouveau. J'ai bâti un laboratoire d'holographie à partir de zéro, puis conçu et construit une salle blanche classe 10 000 de 300 pi² à petit budget. Un ingénieur en CVAC qui a visité la salle blanche a été tellement impressionné par ma conception qu'il m'a offert un emploi sur-le-champ. J'ai recruté une équipe paritaire de jeunes ingénieurs talentueux en suivant un ensemble de principes d'embauche pour startups que j'avais mis par écrit pendant ma période de repos post-Picomole. Avec mes encouragements, ils ont acquis la confiance nécessaire pour improviser avec aisance, par exemple en fabriquant le mécanisme de balayage pour le premier hologramme grand format que nous avons réalisé à partir de pièces d'une imprimante mise au rebut trouvée dans un bac de recyclage. Ensemble, mon équipe et moi avons démontré des filtres holographiques coupe-bande à plusieurs longueurs d'onde, et breveté le premier filtre de protection laser hautement transparent et grand angle au monde pour les applications aérospatiales.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content-wrapper">
+          <span class="timeline-year">2018</span>
+          <div class="timeline-content">
+            <h3>L'appel de Waterloo</h3>
+            <p>Mes succès chez MTI ont attiré l'attention de Thalmic Labs à Waterloo, qui m'a recruté au poste de responsable de la communauté R&D et chef de projet en holographie, avec pour mission de construire un laboratoire de recherche avancée en holographie à partir de zéro. Cette fois, l'application était les lunettes intelligentes. Je me suis vite retrouvé en recherche mondiale de talents alors que j'appliquais mes principes d'embauche et recrutais une équipe paritaire de scientifiques et d'ingénieurs juniors exceptionnels, ajoutant même un artiste holographique talentueux au groupe. Lors d'un test précoce de nos capacités de résolution de problèmes, mon équipe et moi avons résolu un défi technique majeur considéré comme impossible, éliminant un obstacle clé à la production de masse d'affichages holographiques. Mais ma famille avait besoin de moi au Nouveau-Brunswick, et je suis donc rentré chez moi fin 2018 pour chercher un nouveau défi.</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content-wrapper">
+          <span class="timeline-year">2019</span>
+          <div class="timeline-content">
+            <h3>Redonner</h3>
+            <p>Je mentorais des entrepreneurs depuis ma victoire à VenturePrize en 2007, mais je voulais faire plus. J'ai rejoint l'équipe de la FINB en 2019 et géré deux fonds, le Fonds de recrutement de talents et un nouveau fonds que j'ai conçu et lancé appelé le Fonds Labo-au-Marché, destiné à combler l'écart entre le financement académique et les investissements de démarrage. Depuis mon bureau à Moncton, j'ai parcouru toute la province, de St. Andrews à Shippagan, d'Edmundston à Sackville, rencontrant chercheurs et innovateurs dans leurs bureaux et laboratoires. En tant que scientifique expérimental, je comprenais intuitivement le triomphe de leurs avancées ainsi que la frustration de leurs défis. J'ai quitté la FINB avec un sens renouvelé de ma mission, façonné par l'expérience d'avoir rencontré tant de chercheurs dévoués et d'innovateurs visionnaires. Aujourd'hui, ma mission personnelle reste la même : mettre toute mon expérience et mon énergie au service des innovateurs et entrepreneurs pour les aider à réaliser leurs rêves, ici même au Canada atlantique.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Contactez-moi</h2>
+    <p class="section-intro">
+      Intéressé à collaborer ou simplement envie de dire bonjour ? J'aimerais beaucoup avoir de vos nouvelles.
+    </p>
+    <a href={`${base}fr/contact`} class="contact-btn">Envoyez-moi un message</a>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: 4rem 0 3rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    padding: 0;
+  }
+
+  .hero-tagline {
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+    color: #60a5fa;
+  }
+
+  .hero-intro {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  /* Photo Gallery */
+  .photo-gallery {
+    padding: 2rem 0 4rem;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 0.75rem;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--color-bg-alt);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.4s ease;
+    display: block;
+  }
+
+  .gallery-item.portrait {
+    aspect-ratio: 3/4;
+  }
+
+  .gallery-item.landscape {
+    aspect-ratio: 4/3;
+    grid-column: span 2;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.03);
+  }
+
+  .gallery-item.zoomed img {
+    transform: scale(1.2);
+  }
+
+  .gallery-item.zoomed:hover img {
+    transform: scale(1.23);
+  }
+
+  .gallery-item.align-bottom {
+    transform: translateY(calc(-14.5% + 5px));
+  }
+
+  .gallery-item.photo4-adjust img {
+    object-position: 35% center;
+  }
+
+  /* Sections */
+  section {
+    padding: 5rem 0;
+  }
+
+  section h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .section-intro {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  /* Timeline */
+  .timeline {
+    margin-top: 3rem;
+    position: relative;
+    padding: 2rem 0;
+  }
+
+  /* Vertical line */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 16px;
+    width: 4px;
+    background: var(--color-accent);
+    border-radius: 2px;
+  }
+
+  /* Arrowhead at bottom */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 16px solid var(--color-accent);
+  }
+
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 3rem;
+    width: 100%;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Dot on the timeline */
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0.5rem;
+    width: 16px;
+    height: 16px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    border: 3px solid var(--color-bg);
+    z-index: 1;
+  }
+
+  .timeline-content-wrapper {
+    width: 45%;
+    padding: 0 2rem;
+  }
+
+  /* Odd items: content on left */
+  .timeline-item:nth-child(odd) .timeline-content-wrapper {
+    margin-right: auto;
+    text-align: right;
+  }
+
+  /* Even items: content on right */
+  .timeline-item:nth-child(even) .timeline-content-wrapper {
+    margin-left: auto;
+    text-align: left;
+  }
+
+  .timeline-year {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-content p {
+    color: var(--color-text-muted);
+  }
+
+  /* Contact */
+  .contact {
+    text-align: center;
+    padding: 6rem 0;
+  }
+
+  .contact .section-intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--color-accent);
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+
+  .contact-btn:hover {
+    background: var(--color-accent-hover);
+    color: white;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero-tagline {
+      font-size: 2rem;
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-item.landscape {
+      grid-column: span 2;
+    }
+
+    /* Timeline mobile: single column */
+    .timeline::before {
+      left: 1rem;
+    }
+
+    .timeline::after {
+      left: 1rem;
+    }
+
+    .timeline-item::before {
+      left: 1rem;
+    }
+
+    .timeline-content-wrapper {
+      width: calc(100% - 3rem);
+      margin-left: 3rem !important;
+      margin-right: 0 !important;
+      text-align: left !important;
+      padding: 0;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-item.landscape {
+      grid-column: span 1;
+      aspect-ratio: 4/3;
+    }
+  }
+</style>

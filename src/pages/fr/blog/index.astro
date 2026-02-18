@@ -1,15 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog'))
-  .filter((post) => post.data.lang !== 'fr')
+  .filter((post) => post.data.lang === 'fr')
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const base = import.meta.env.BASE_URL;
 
 function formatDate(date: Date): string {
-  return date.toLocaleDateString('en-US', {
+  return date.toLocaleDateString('fr-CA', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -17,20 +17,20 @@ function formatDate(date: Date): string {
 }
 ---
 
-<BaseLayout title="Blog - John Cormier" description="Thoughts on entrepreneurship, science, innovation, leadership, and more from John Cormier.">
+<BaseLayout title="Blogue - John Cormier" description="Réflexions sur l'entrepreneuriat, la science, l'innovation, le leadership et plus encore par John Cormier." lang="fr">
   <section class="blog-header">
-    <h1>Blog</h1>
-    <p>Thoughts on science, innovation, entrepreneurship, and more.</p>
+    <h1>Blogue</h1>
+    <p>Réflexions sur la science, l'innovation, l'entrepreneuriat et plus encore.</p>
   </section>
 
   <section class="blog-list">
     {posts.length === 0 ? (
-      <p class="no-posts">No posts yet. Check back soon!</p>
+      <p class="no-posts">Aucun article pour le moment. Revenez bientôt !</p>
     ) : (
       <ul>
         {posts.map((post) => (
           <li>
-            <a href={`${base}blog/${post.id}`} class="post-card">
+            <a href={`${base}fr/blog/${post.id}`} class="post-card">
               <div class="post-meta">
                 <time datetime={post.data.pubDate.toISOString()}>
                   {formatDate(post.data.pubDate)}

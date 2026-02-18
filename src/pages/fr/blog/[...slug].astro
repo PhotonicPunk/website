@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('blog')).filter((post) => post.data.lang !== 'fr');
+  const posts = (await getCollection('blog')).filter((post) => post.data.lang === 'fr');
   return posts.map((post) => ({
     params: { slug: post.id },
     props: post,
@@ -15,7 +15,7 @@ const { Content } = await render(post);
 const base = import.meta.env.BASE_URL;
 
 function formatDate(date: Date): string {
-  return date.toLocaleDateString('en-US', {
+  return date.toLocaleDateString('fr-CA', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -23,10 +23,10 @@ function formatDate(date: Date): string {
 }
 ---
 
-<BaseLayout title={`${post.data.title} | John Gerald Cormier`} description={post.data.description}>
+<BaseLayout title={`${post.data.title} | John Gerald Cormier`} description={post.data.description} lang="fr">
   <article class="blog-post">
     <header>
-      <a href={`${base}blog`} class="back-link">&larr; Back to Blog</a>
+      <a href={`${base}fr/blog`} class="back-link">&larr; Retour au blogue</a>
       <h1>{post.data.title}</h1>
       <div class="post-meta">
         <time datetime={post.data.pubDate.toISOString()}>
@@ -34,7 +34,7 @@ function formatDate(date: Date): string {
         </time>
         {post.data.updatedDate && (
           <span class="updated">
-            (Updated: {formatDate(post.data.updatedDate)})
+            (Mis à jour : {formatDate(post.data.updatedDate)})
           </span>
         )}
       </div>

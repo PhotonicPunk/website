@@ -10,16 +10,31 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  lang?: string;
 }
 
-const { title, description = "John Gerald Cormier, PhD - Physicist, Inventor, Entrepreneur", image } = Astro.props;
+const { title, description = "John Gerald Cormier, PhD - Physicist, Inventor, Entrepreneur", image, lang = "en" } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = image ? new URL(image, Astro.site).href : new URL(`${base}images/og-image.jpg`, Astro.site).href;
+
+// Language switcher URL
+const pathname = Astro.url.pathname;
+const altLangUrl = lang === "fr"
+  ? pathname.replace(/^\/fr\/?/, base)
+  : `${base}fr${pathname === base ? '' : pathname.replace(/^\/$/, '')}`;
+
+// Nav & footer labels
+const nav = lang === "fr"
+  ? { about: "À propos", engage: "Services", media: "Médias", blog: "Blogue", contact: "Contact" }
+  : { about: "About", engage: "Engage Me", media: "Media", blog: "Blog", contact: "Get In Touch" };
+
+const homeHref = lang === "fr" ? `${base}fr/` : base;
+const navPrefix = lang === "fr" ? `${base}fr/` : base;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
@@ -101,17 +116,18 @@ const ogImage = image ? new URL(image, Astro.site).href : new URL(`${base}images
 
     <nav>
       <div class="nav-container">
-        <a href={base} class="logo">
+        <a href={homeHref} class="logo">
           <img src={`${base}logo.svg`} alt="JGC" class="logo-img" />
           <span>John Cormier</span>
         </a>
         <div class="nav-links">
-          <a href={`${base}#about`}>About</a>
-          <a href={`${base}engage`}>Engage Me</a>
-          <a href={`${base}media`}>Media</a>
-          <a href={`${base}blog`}>Blog</a>
-          <a href={`${base}contact`}>Get In Touch</a>
+          <a href={`${navPrefix}#about`}>{nav.about}</a>
+          <a href={`${navPrefix}engage`}>{nav.engage}</a>
+          <a href={`${navPrefix}media`}>{nav.media}</a>
+          <a href={`${navPrefix}blog`}>{nav.blog}</a>
+          <a href={`${navPrefix}contact`}>{nav.contact}</a>
         </div>
+        <a href={altLangUrl} class="lang-switcher">{lang === "fr" ? "EN" : "FR"}</a>
         <button class="mobile-menu-btn" aria-label="Toggle menu">
           <span></span>
           <span></span>
@@ -144,13 +160,13 @@ const ogImage = image ? new URL(image, Astro.site).href : new URL(`${base}images
     <footer>
       <div class="footer-container">
         <div class="footer-links">
-          <a href={`${base}#about`}>About</a>
-          <a href={`${base}engage`}>Engage Me</a>
-          <a href={`${base}media`}>Media</a>
-          <a href={`${base}blog`}>Blog</a>
-          <a href={`${base}contact`}>Contact</a>
+          <a href={`${navPrefix}#about`}>{nav.about}</a>
+          <a href={`${navPrefix}engage`}>{nav.engage}</a>
+          <a href={`${navPrefix}media`}>{nav.media}</a>
+          <a href={`${navPrefix}blog`}>{nav.blog}</a>
+          <a href={`${navPrefix}contact`}>{nav.contact}</a>
         </div>
-        <p class="copyright">&copy; {new Date().getFullYear()} John Gerald Cormier. All rights reserved.</p>
+        <p class="copyright">&copy; {new Date().getFullYear()} John Gerald Cormier. {lang === "fr" ? "Tous droits réservés." : "All rights reserved."}</p>
       </div>
     </footer>
   </body>
@@ -250,6 +266,23 @@ const ogImage = image ? new URL(image, Astro.site).href : new URL(`${base}images
 
   .nav-links a:hover {
     color: var(--color-text);
+  }
+
+  .lang-switcher {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: color 0.2s, border-color 0.2s;
+    text-transform: uppercase;
+  }
+
+  .lang-switcher:hover {
+    color: var(--color-text);
+    border-color: var(--color-text-muted);
   }
 
   .mobile-menu-btn {
