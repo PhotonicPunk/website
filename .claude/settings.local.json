@@ -5,7 +5,28 @@
       "WebFetch(domain:barryoreilly.com)",
       "Bash(ls:*)",
       "WebSearch",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "WebFetch(domain:search.patentsview.org)",
+      "WebFetch(domain:data.uspto.gov)",
+      "WebFetch(domain:patents.google.com)",
+      "WebFetch(domain:patents.justia.com)",
+      "WebFetch(domain:ppubs.uspto.gov)",
+      "Bash(tesseract:*)",
+      "Bash(# Resize the large image and retry python3 -c \"\" from PIL import Image Image.MAX_IMAGE_PIXELS = None img = Image.open\\(''/tmp/12066422_left.png''\\).convert\\(''L''\\) # Resize to ~2000px wide ratio = 2000 / img.width img = img.resize\\(\\(2000, int\\(img.height * ratio\\)\\), Image.LANCZOS\\) img.save\\(''/tmp/12066422_resized.png''\\) print\\(f''Resized: {img.size}''\\) \"\" cd /tmp && tesseract 12066422_resized.png stdout --psm 6)",
+      "Bash(python3:*)",
+      "Bash(PATENTSVIEW_API_KEY=\"0d62g8io.ElTVyv5QrW02cemnvWgA0qtcS8Drhs6B\" python3:*)",
+      "Bash(PATENTSVIEW_API_KEY=0d62g8io.ElTVyv5QrW02cemnvWgA0qtcS8Drhs6B python3:*)",
+      "WebFetch(domain:www12.statcan.gc.ca)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:www23.statcan.gc.ca)",
+      "WebFetch(domain:www.statcan.gc.ca)",
+      "WebFetch(domain:www150.statcan.gc.ca)",
+      "WebFetch(domain:www12-2021.statcan.gc.ca)",
+      "WebFetch(domain:census-new-prod.statcan.gc.ca)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(python:*)"
     ]
   }
 }
