@@ -30,7 +30,7 @@ function formatDate(date: Date): string {
       <ul>
         {posts.map((post) => (
           <li>
-            <a href={`${base}blog/${post.id}`} class="post-card">
+            <a href={`${base}blog/${post.id}/`} class="post-card">
               <div class="post-meta">
                 <time datetime={post.data.pubDate.toISOString()}>
                   {formatDate(post.data.pubDate)}

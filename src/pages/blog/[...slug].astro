@@ -26,7 +26,7 @@ function formatDate(date: Date): string {
 <BaseLayout title={`${post.data.title} | John Gerald Cormier`} description={post.data.description}>
   <article class="blog-post">
     <header>
-      <a href={`${base}blog`} class="back-link">&larr; Back to Blog</a>
+      <a href={`${base}blog/`} class="back-link">&larr; Back to Blog</a>
       <h1>{post.data.title}</h1>
       <div class="post-meta">
         <time datetime={post.data.pubDate.toISOString()}>

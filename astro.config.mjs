@@ -8,5 +8,6 @@ export default defineConfig({
   site: 'https://johncormier.ca',
   base: '',
   output: 'static',
+  trailingSlash: 'always',
   integrations: [sitemap()],
 });
