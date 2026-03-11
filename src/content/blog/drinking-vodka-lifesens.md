@@ -1,7 +1,7 @@
 ---
-title: "Drinking Straight Vodka for Science"
+title: "The Proof of Concept"
 pubDate: 2026-03-10
-description: "How Picomole's LifeSens prototype went from theoretical concept to real thing — one very unproductive afternoon at a time."
+description: "I'd known for years I'd have to eat my own dog food. I never imagined that when the day came, I'd be chugging vodka."
 ---
 
 In late 2008, after more than three years of development work, Picomole's LifeSens proof-of-concept prototype was finally mounted on a wheeled cart. At the outset, that had seemed preposterous. Yet the scientists and engineers who joined Picomole in those early years had succeeded in miniaturizing the laboratory apparatus I'd built that once occupied a 4×8 foot optical table surrounded by equipment racks. It was now possible to wheel it around a setting like a hospital.
