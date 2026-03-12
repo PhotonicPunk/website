@@ -1,5 +1,5 @@
 ---
-title: "The Proof of Concept"
+title: "An 80-Proof of Concept"
 pubDate: 2026-03-10
 description: "I'd known for years I'd have to eat my own dog food. I never imagined that when the day came, I'd be chugging vodka."
 ---
